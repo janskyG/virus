@@ -1,0 +1,29 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 3,
+  "name": "virus",
+  "description": "jnsk",
+  "version": "24.08",
+  "icons": {
+    "16": "extension-icon.png",
+    "48": "extension-icon.png",
+    "128": "extension-icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "virus",
+    "default_icon": "extension-icon.png"
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "permissions": ["tabs", "activeTab"]
+}
